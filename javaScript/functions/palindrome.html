@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function palindrome(a){
+  let original=a
+  let r;
+  let sum=0;
+  while(a>0){
+    r=a%10;
+    sum=sum*10+r;
+    a=parseInt(a/10);
+  }
+  if (original==sum){
+    document.write(`${original} is a palindrome number`)
+  }
+  else{
+    document.write(`${original} is not a palindrome num`)
+  }
+}
+
+palindrome(161)
+  </script>
+</body>
+</html>
