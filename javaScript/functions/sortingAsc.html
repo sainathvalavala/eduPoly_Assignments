@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+function sortThreeNum(x, y, z) {
+  if (x > y) {
+    let temp = x;
+    x = y;
+    y = temp;
+  }
+  if (y > z) {
+    let temp = y;
+    y = z;
+    z = temp;
+  }
+  if (x > y) {
+    let temp = x;
+    x = y;
+    y = temp;
+  }
+  return [x, y, z];
+}
+
+console.log( sortThreeNum(31,21,11));
+</script>
+</body>
+</html>
