@@ -8,9 +8,9 @@
   <body>
     <script>
       var x = [10, 22, 35, 57, 60];
-      var z = x.forEach(function (y) {
-        console.log(y);
-      });
+      var z = x.forEach(function (x,y,z){//(element, index, array)
+        console.log(`${x} with index ${y} and array ${z}`)
+      })
     </script>
   </body>
 </html>
