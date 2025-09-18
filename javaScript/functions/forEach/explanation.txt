@@ -1,0 +1,38 @@
+Executes a provided callbackFunction once for each array element.
+○ Does not return a new array.
+○ The callbackFunction receives (element, index, array).
+
+🔹 forEach
+
+What it does: Loops through each item in the array.
+
+Return value: Always undefined.
+
+When to use: When you want to do something for each element (a side effect), like printing, updating a database, modifying the original array, etc
+
+🔹🔹🔹 forEach itself does not modify the array automatically.
+
+But if you write code inside it that changes the array, then yes, the original array gets modified (because arrays in JavaScript are mutable).
+             Example 1: forEach with no modification
+                  const nums = [1, 2, 3];
+
+                  nums.forEach(x => {
+                    console.log(x * 2); // looks like it does something, but result is ignored
+                  });
+
+                  console.log(nums); // [1, 2, 3] (unchanged)
+
+
+                  Here, the array stays the same, because we didn’t directly assign back to it.
+
+             Example 2: forEach modifying the original
+                  const nums = [1, 2, 3];
+
+                  nums.forEach((x, i, arr) => {
+                    arr[i] = x * 2; // actively change the element at index i
+                  });
+
+                  console.log(nums); // [2, 4, 6] (modified!)
+
+
+                  Notice how we used the third argument arr (which is the same array) and reassigned values.
