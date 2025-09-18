@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>errorHandlinginJS</title>
+</head>
+<body>
+  <script>
+    function sub(a,b,cb){
+      if(isNaN(a)||isNaN(b)){
+        cb("pass a number type arguments", null)
+      }else{
+        var c= a-b;
+        cb(null,c)
+      }
+    }
+    sub(9,6, function(x,y){
+      if(x==null){
+        console.log(y)
+      }else{
+        console.log(x);
+      }
+    })
+  </script>
+</body>
+</html>
