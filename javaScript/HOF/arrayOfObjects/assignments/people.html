@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var people = [
+        {
+          firstname: "praveen",
+          lastname: "gubbala",
+          age: 36,
+          gender: "male",
+          city: "hyd",
+          salary: 10000,
+        },
+        {
+          firstname: "srikanth",
+          lastname: "gubbala",
+          age: 32,
+          gender: "male",
+          city: "bengaluru",
+          salary: 20000,
+        },
+        {
+          firstname: "pradeep",
+          lastname: "reddy",
+          age: 21,
+          gender: "male",
+          city: "hyd",
+          salary: 25000,
+        },
+        {
+          firstname: "mounika",
+          lastname: "mudiraj",
+          age: 20,
+          gender: "female",
+          city: "nalgonda",
+          salary: 30000,
+        },
+        {
+          firstname: "nikhil",
+          lastname: "m",
+          age: 22,
+          gender: "male",
+          city: "guntur",
+          salary: 2000,
+        },
+        {
+          firstname: "riya",
+          lastname: "bhadouria",
+          age: 14,
+          gender: "female",
+          city: "indore",
+          salary: 40000,
+        },
+      ];
+      people.forEach(function (p) {
+        console.log(p.firstname);
+      });
+      people.forEach(function (p) {
+        console.log(p.firstname + " " + p.lastname);
+      });
+      var x = people.filter(function (p) {
+        if (p.age > 25) {
+          return true;
+        }
+      });
+      console.log(x);
+//Print only those names whose salary is more than 25000 and increase their salaries by 15%.
+people.forEach(function(x){
+  if(x.salary>25000){
+    console.log(x.firstname)
+  }
+})
+      // var y = people.filter(function (p) {
+      //   if (p.salary > 25000) {
+      //     p.salary = p.salary + (p.salary * 15) / 100;
+      //     return true;
+      //   }
+      // });
+      // console.log(y);
+  //     var y = people
+  // .filter(function(p) {
+  //   return p.salary > 25000;
+  // })
+  // .map(function(p) {
+  //   return {
+  //     name: p.firstname,
+  //     newSalary: p.salary + p.salary * 15 / 100
+  //   };
+  // });
+
+// console.log(y);
+
+//. Print all the firstnames whose salary is more than 25000.
+      var z = people
+        .filter(function (p) {
+          return p.salary > 25000;
+        })
+        .map(function (p) {
+          return p.firstname;
+        });
+
+      console.log(z);
+    </script>
+  </body>
+</html>
