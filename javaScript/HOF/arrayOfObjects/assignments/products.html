@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var products = [
+        {
+          id: 1,
+          title: "iPhone 9",
+          description: "An apple mobile which is nothing like apple",
+          price: 549,
+          discountPercentage: 12.96,
+          rating: 4.69,
+          stock: 94,
+          brand: "Apple",
+          category: "smartphones",
+          thumbnail: "products/1/thumbnail.jpg",
+        },
+        {
+          id: 2,
+          title: "iPhone X",
+          description: "6.5-inch Super Retina HD display with OLED",
+          price: 899,
+          discountPercentage: 17.94,
+          rating: 4.44,
+          stock: 34,
+          brand: "Apple",
+          category: "smartphones",
+          thumbnail: "products/2/thumbnail.jpg",
+        },
+        {
+          id: 3,
+          title: "Samsung Universe 9",
+          description: "Samsung's new phone which goes beyond Galaxy",
+          price: 1249,
+          discountPercentage: 15.46,
+          rating: 4.09,
+          stock: 36,
+          brand: "Samsung",
+          category: "smartphones",
+          thumbnail: "products/3/thumbnail.jpg",
+        },
+        {
+          id: 4,
+          title: "OPPOF19",
+          description: "OPPO F19 is officially announced on April 2021.",
+          price: 280,
+          discountPercentage: 17.91,
+          rating: 4.3,
+          stock: 123,
+          brand: "OPPO",
+          category: "smartphones",
+          thumbnail: "products/4/thumbnail.jpg",
+        },
+        {
+          id: 5,
+          title: "Huawei P30",
+          description: "Huawei's re-badged P30 Pro New Edition",
+          price: 499,
+          discountPercentage: 10.58,
+          rating: 4.09,
+          stock: 32,
+          brand: "Huawei",
+          category: "smartphones",
+        },
+      ];
+      //Print all the product titles in ascending order of their prices
+      let titlesByPrice = products
+        .slice() // make a copy so we don’t modify the original
+        .sort(function (a, b) {
+          if (a.price > b.price) {
+            return 1;
+          } else {
+            return -1;
+          }
+        }) // sort by price ascending
+        .map(function (p) {
+          return p.title;
+        }); // pick only titles
+        
+      console.log(titlesByPrice);
+      console.log(products);
+      //Separate all the Apple and non-Apple products and store them in separate arrays
+      let aa = products.filter(function (p) {
+        return (p.brand == "Apple") 
+      });
+      console.log(aa);
+      let bb = products.filter(function (p) {
+        return (p.brand !== "Apple")
+      });
+      console.log(bb);
+    </script>
+  </body>
+</html>
