@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  //capitalize middle letter of a string in a array
+  let ar=["xxxxx","yyyyy","zzzzz","ttttt","uuuuu"];
+  let br= ar.map(function(a){
+    return a.charAt(0)+a.charAt(1)+a.charAt(2).toUpperCase()+a.substring(3);
+  })
+  console.log(br)
+  </script>
+</body>
+</html>
