@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="products.js"></script>
+  </head>
+  <body>
+    <script>
+      // var newProducts=[]
+      // products.forEach(function(a) {//object reference of products is passed into a as a callback.
+      //   (a.price=a.price-a.price*10/100);
+      //   newProducts.push(a)
+      // });
+      // console.log(newProducts)
+      // console.log(products)
+      //map
+      // console.log(products)
+      // var newProducts= products.map(function(a){
+      //   a.price=a.price-a.price*10/100
+      //   return a
+      // })
+      // console.log(newProducts)
+      // console.log(products)
+      var newProducts = products.map(function (a) {//object reference of products is passed into a as a callback. So modifying a will modify products too
+        a.discountedPrice = a.price - (a.price * 10 / 100);
+        return a;
+      });
+      console.log(newProducts);
+      console.log(products);
+    </script>
+  </body>
+</html>
