@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let ar = [111, 22, 333, 44, 55, 2, 678, 45, 181]
+    let max= ar.reduce(function(a,b){
+      if(a>b){//111>22
+        return a //111 accumulator a=111
+      }else{
+        return b
+      }
+    })
+    console.log(max)
+    </script>
+</body>
+</html>
