@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let ar = [1, 2, 33, 44, 555, 78, 96];
+      //push- adds element at last returns the length of the array
+      let br = ar.push(55);
+      console.log(br, ar);
+      //pop- removes last element and returns the popped elemnt
+      let cr = ar.pop();
+      console.log(cr, ar);
+      //shift-removes first element and returns removed element
+      let dr = ar.shift();
+      console.log(dr, ar);
+      //unshift-adds the last element and returns length of array
+      let er = ar.unshift(33);
+      console.log(er, ar);
+      //slice Returns a shallow copy of part of the array (does not modify original).
+      // slice(start, end) → end not included
+      let sr = ar.slice(2, 5); // elements from index 2 to 4
+      console.log("slice:", sr, ar);
+      // splice(start, deleteCount, item1, item2, ...)
+      let ar2 = [1, 2, 33, 44, 555, 78, 96];
+      let spr = ar2.splice(2, 2, 100, 200);
+      // removes 2 elements starting at index 2 → [33, 44]
+      // then inserts 100, 200 at that position
+      console.log("splice removed:", spr);
+      console.log("after splice:", ar2);
+//Every-check if all the elements of the array satisfies the condition, returns true if satisfied or else returns false
+      let num=[2,4,6,7]
+      let even=num.every(function(x){
+        return x%2==0;
+      })
+      console.log(even)
+      //some-check if any element satisfies the condition, returns true if any element satisfies or else return false
+      let nums=[2,4,6,7]
+      let ev=nums.some(function(x){
+        return x%2==0;
+      })
+      console.log(ev)
+      //fill- fills all the elements of array with given value
+      //fill(value,startIndex,endindex)
+      let arr=[1,2,3,4,5]
+      // brr=arr.fill(0);
+      // console.log(brr)
+      crr=arr.fill(0,2,4);
+      console.log(crr)
+    </script>
+  </body>
+</html>
