@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>;
+      let a = "SsaAinathNnaidu";
+      let b = a
+        .split("")
+        .sort((x, y) => x.localeCompare(y, undefined, { sensitivity:"base" }));
+//string.localeCompare(compareString, locales, options)
+// compareString => the string you’re comparing against.
+
+/* locales => 
+A string with a BCP 47 language tag (like "en-US", "de-DE", "fr", etc.).
+Or an array of such strings, where the first supported one will be used.If you pass undefined, it uses the system/browser default*/
+
+
+// options
+
+/* This is where the magic happens. Common ones:
+
+sensitivity → controls case/diacritics (accents):
+
+"base" → ignores case and accents (a == A == á).
+
+"accent" → ignores case, but accents matter (a == A, but a != á).
+
+"case" → case matters, but accents ignored (a != A, but a == á).
+
+"variant" → strict, everything matters (a != A != á).*/
+
+
+      console.log(b.join(""));
+    </script>
+  </body>
+</html>
