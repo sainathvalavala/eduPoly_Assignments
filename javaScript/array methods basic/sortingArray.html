@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let x= ["Apple", "Banana", "Cherry", "Mango", "Orange", "Grapes"];
+    // x.forEach((y)=>{
+    //   if(y.includes("a")|| y.includes("A")){
+    //     console.log(y)
+    //   }
+    // })
+    x.sort(function(a,b){
+      if(a>b){
+        return 1
+      }else{
+        return -1
+      }
+    })
+    console.log(x)
+  </script>
+</body>
+</html>
