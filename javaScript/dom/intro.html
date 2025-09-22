@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <h1>shelby</h1>
-  <h1>shelby</h1>
-  <h2 class="abc">sainath</h2>
-  <h1>shelby</h1>
-  <h2 class="abc">sainath</h2>
-  
-  <div style="border:5px solid red;padding: 20px;" id="div"></div>
-  <script>
-    // console.dir(document)
-    // var x= document.createElement("b1");
-    // x.innerText="welcome to DOM"
-    // // document.body.appendChild(x);
-    // var y=document.getElementById("div")
-    // y.appendChild(x)
-    var x= document.getElementsByTagName("h1");
-    // for(i=0;i<=x.length;i++){
-    //   x[i].style.color="red";
-    // }
-    console.log(x);
-    var y=document.getElementsByClassName("abc");
-    console.log(y)
-    var z=document.querySelectorAll("h1");
-    z.forEach(function(zl){
-      zl.style.color="blue"
-    })
-    console.log(z);
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>shelby</h1>
+    <h1>shelby</h1>
+    <h2 class="abc">sainath</h2>
+    <h1>shelby</h1>
+    <h2 class="abc">sainath</h2>
+
+    <div style="border: 5px solid red; padding: 20px" id="div"></div>
+    <script>
+      // console.dir(document)
+      // var x= document.createElement("b1");
+      // x.innerText="welcome to DOM"
+      // // document.body.appendChild(x);
+      // var y=document.getElementById("div")
+      // y.appendChild(x)
+      var x = document.getElementsByTagName("h1");
+      // for(i=0;i<=x.length;i++){
+      //   x[i].style.color="red";
+      // }
+      console.log(x);
+      var y = document.getElementsByClassName("abc");
+      console.log(y);
+      var z = document.querySelector("h1"); //return html collection
+      var z = document.querySelectorAll("h1"); //returns nodelist
+      z.forEach(function (zl) {
+        zl.style.color = "blue";
+      });
+      console.log(z);
+    </script>
+  </body>
 </html>
