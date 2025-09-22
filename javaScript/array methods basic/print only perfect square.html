@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var x = [11, 16, 22, 36, 47, 81];
+      function perfectSquares(n) {
+        let i = 1;
+        while (i * i <= n) {
+          if (i * i === n) {
+            return true;
+          }
+          i++;
+        }
+        return false;
+      }
+      x.forEach((y) => {
+        if (perfectSquares(y)) {
+          console.log(y + " is a perfect square");
+        }
+      });
+    </script>
+  </body>
+</html>
