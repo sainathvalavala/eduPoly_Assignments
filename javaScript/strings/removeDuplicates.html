@@ -6,21 +6,24 @@
     <title>Document</title>
   </head>
   <body>
-    <script>//remove duplicate characters from a string
+    <script>
+      //remove duplicate characters from a string
       let x = "BalaSainathn";
       let y = x.split("");
       console.log(y);
       //using Filter
       let z = y.filter(function (a, b) {
-        if(b==y.indexOf(a)){
-          return true
+        if (b == y.indexOf(a)) {
+          return true;
         }
       });
-      console.log(z)
-      //using forEach not working
+      console.log(z);
+
+      //
+      // using forEach not working
       // var f=[]
       // y.forEach(function(a){
-      //   if(y.lastIndexOf(a)==y.indexOf(a)){
+      //   if(y.lastIndexOf(a)!==y.indexOf(a)){
       //     f.push(a)
       //   }
       // })
