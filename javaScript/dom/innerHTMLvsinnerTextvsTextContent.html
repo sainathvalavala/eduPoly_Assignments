@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!DOCTYPE html>
+<html>
+<head>
+  <title>innerHTML vs innerText vs textContent</title>
+</head>
+<body>
+  <h2>Original Element</h2>
+  <div id="box">
+    Hello <b style="display:none;">Hidden</b> <i>World</i>!
+  </div>
+
+  <h2>Outputs</h2>
+  <p><b>innerHTML:</b> <span id="html"></span></p>
+  <p><b>innerText:</b> <span id="text"></span></p>
+  <p><b>textContent:</b> <span id="content"></span></p>
+
+  <script>
+    let box = document.getElementById("box");
+
+    document.getElementById("html").innerText = box.innerHTML;
+    document.getElementById("text").innerText = box.innerText;
+    document.getElementById("content").innerText = box.textContent;
+  </script>
+</body>
+</html>
+
+</body>
+</html>
