@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="people.js"></script>
+  </head>
+  <body>
+    <table border="2px" width="70%" align="center">
+      <thead>
+        <tr>
+          <th>name</th>
+          <th>age</th>
+          <th>gender</th>
+          <th>city</th>
+          <th>salary</th>
+          <th>images</th>
+        </tr>
+      </thead>
+      <tbody id="tb"></tbody>
+    </table>
+    <script>
+      // let people = [
+      //   {
+      //     name: "praveen",
+      //     age: 36,
+      //     gender: "male",
+      //     city: "hyd",
+      //     salary: 10000,
+      //   },
+      //   {
+      //     name: "srikanth",
+      //     age: 32,
+      //     gender: "male",
+      //     city: "bangaluru",
+      //     salary: 20000,
+      //   },
+      //   {
+      //     name: "pradeep",
+      //     age: 21,
+      //     gender: "male",
+      //     city: "hyd",
+      //     salary: 25000,
+      //   },
+      //   {
+      //     name: "mounika",
+      //     age: 20,
+      //     gender: "female",
+      //     city: "nalgonda",
+      //     salary: 30000,
+      //   },
+      //   {
+      //     name: "nikhil",
+      //     age: 22,
+      //     gender: "male",
+      //     city: "guntur",
+      //     salary: 2000,
+      //   },
+      //   {
+      //     name: "riya",
+      //     age: 14,
+      //     gender: "female",
+      //     city: "indore",
+      //     salary: 40000,
+      //   },
+      // ];
+      console.log(people);
+      for (var i = 0; i < people.length; i++) {
+        var tbody = document.getElementById("tb");
+        var tr1 = document.createElement("tr");
+        tbody.appendChild(tr1);
+        //name row
+        var nametd = document.createElement("td");
+        nametd.innerHTML = people[i].name;
+        tr1.appendChild(nametd);
+        //age row
+        var agetd = document.createElement("td");
+        agetd.innerHTML = people[i].age;
+        tr1.appendChild(agetd);
+        //gender row
+        var gendertd = document.createElement("td");
+        gendertd.innerHTML = people[i].gender;
+        tr1.appendChild(gendertd);
+        //city row
+        var citytd = document.createElement("td");
+        citytd.innerHTML = people[i].city;
+        tr1.appendChild(citytd);
+        //salary row
+        var salarytd = document.createElement("td");
+        salarytd.innerHTML = people[i].salary;
+        tr1.appendChild(salarytd);
+        //images row
+        var imagetd = document.createElement("td");
+        var imgsrc = document.createElement("img");
+        imgsrc.src = people[i].image;
+        imgsrc.style.width="80px" ;
+        // imagetd.innerHTML = `<img src="${people[i].image}" width="80" height="80" />`;
+        imagetd.appendChild(imgsrc);
+        tr1.appendChild(imagetd);
+      }
+    </script>
+  </body>
+</html>
