@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="products.js">
+    </script>
+  </head>
+  <body>
+    <table border="2px" width="70%" center>
+      <thead>
+        <tr>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>age</th>
+          <th>gender</th>
+          <th>city</th>
+        </tr>
+      </thead>
+      <tbody id="tb">
+      </tbody>
+    </table>
+    <script>
+      console.log(products);
+      for(let i=0;i<=products.length-1;i++){
+        var x= document.createElement("tr");
+        //firstname row
+        var y= document.createElement("td");
+        y.innerHTML=products[i].firstname;
+        x.appendChild(y)
+        //appending tr(table row) to tb(table body)
+        let z=document.getElementById("tb")
+        z.appendChild(x)
+        //lastname row
+        var a=document.createElement("td");
+        a.innerHTML=products[i].lastname
+        x.appendChild(a)
+        //age
+        var b= document.createElement("td")
+        b.innerHTML=products[i].age
+        x.appendChild(b)
+        //gender
+        var c=document.createElement("td")
+        c.innerHTML=products[i].gender
+        x.appendChild(c)
+        //city
+        var d= document.createElement("td")
+        d.innerHTML=products[i].city
+        x.appendChild(d)
+      }
+    </script>
+  </body>
+</html>
