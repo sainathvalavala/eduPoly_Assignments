@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--2,3 Assignments-->
+    <h1 class="a">Hello</h1>
+    <h2 class="a">Edupoly</h2>
+    <p class="b">Training</p>
+    <ul>
+      <li>Apple</li>
+      <li>Mango</li>
+      <li>Orange</li>
+    </ul>
+    <script>
+      var z = document.getElementsByClassName("a");
+      console.log(z);
+      for (i = 0; i <= z.length - 1; i++) {
+        console.log(z[i].innerHTML);
+      }
+      let x = document.querySelectorAll("li");
+      console.log(x);
+      var fruits = [];
+      x.forEach(function (a) {
+        // console.log(a.innerHTML)
+        fruits.push(a.innerHTML);
+      });
+      console.log(fruits);
+    </script>
+  </body>
+</html>
