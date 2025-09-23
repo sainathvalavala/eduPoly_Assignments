@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="h1" class="hello">Hello World1</h1>
+    <h1 id="h1" class="hello">Hello World2</h1>
+    <h1 id="h1" class="hello">Hello World3</h1>
+    <script>
+      var x = document.getElementsByClassName("hello");
+      console.log(x);
+      // console.log(x.innerHTML);
+      for (let i = 0; i <= x.length; i++) {
+        console.log(x[i].innerHTML);
+        // console.log(typeof x[i].innerHTML);
+        // console.log(x[i].innerHTML.toUpperCase());
+        // (x[i].innerHTML="Welcome to Edupoly");
+      }
+    </script>
+  </body>
+</html>

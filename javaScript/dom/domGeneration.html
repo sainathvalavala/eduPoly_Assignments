@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="array">
+
+  </ul>
+  <script>
+    // var x=document.createElement("h1");
+    //   x.innerHTML="Hello DOM World!"
+    //   document.body.appendChild(x)
+    //   x.style.color="red"
+    // var x=["ramesh", "Suresh", "Praveen", "Gopi", "Sunil"]
+    var x=[11,12,13,14,15,16,17]
+    console.log(x)
+    x.forEach(function(y){
+      var a=document.createElement("li");
+      a.innerHTML=y
+      document.getElementById("array").appendChild(a)
+    })
+  </script>
+</body>
+</html>
