@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="abc(event)">Red</button>
+    <script>
+      function abc(ev) {
+        var x = ev.target;
+        console.log(x);
+        if (x.style.backgroundColor == "red") {
+          x.style.backgroundColor = "white";
+          x.innerHTML = "Red";
+        } else {
+          x.style.backgroundColor = "red";
+          x.innerHTML = "White";
+        }
+        // if (x.style.backgroundColor == "white") {
+        //   x.style.backgroundColor = "red";
+        //   x.innerHTML = "white";
+        // } else {
+        //   x.style.backgroundColor = "white";
+        //   x.innerHTML = "Red";
+        // }
+      }
+      // x.style.backgroundColor="red";
+      // x.innerHTML="White"
+      // // var x= document.getElementById("btn")
+      // // console.log(x)
+      // // if(x.style.backgroundColor="white"){
+      // //   x.innerHTML="white"
+      // // }
+    </script>
+  </body>
+</html>
