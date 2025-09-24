@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      style="width: 70%; height: 100px; border: 2px solid; margin-bottom: 5px"
+      id="div"
+    ></div>
+    <!-- <button onclick="a()">Red</button>
+  <button onclick="ab()">Blue</button>
+  <button onclick="abc()">Green</button>
+  <button onclick="abcd()">Black</button>
+  <body>
+    <script>
+      function a(){
+        var x=document.getElementById("div");
+        // let y= x.innerText
+        x.style.backgroundColor="red"
+      }
+      function ab(){
+        var x=document.getElementById("div");
+        // let y= x.innerText
+        x.style.backgroundColor="green"
+      }
+      function abc(){
+        var x=document.getElementById("div");
+        // let y= x.innerText
+        x.style.backgroundColor="blue"
+      }
+      function abcd(){
+        var x=document.getElementById("div");
+        // let y= x.innerText
+        x.style.backgroundColor="black"
+      </script>
+      } -->
+    <button onclick="abc(event)">Red</button>
+    <button onclick="abc(event)">Green</button>
+    <button onclick="abc(event)">Yellow</button>
+    <button onclick="abc(event)">Black</button>
+    <script>
+      function abc(e) {
+        console.log(e);
+        var a = e.target.innerText;
+        console.log(a);
+        var x = document.getElementById("div");
+        if (a == "Red") {
+          x.style.backgroundColor = "red";
+        } else if (a == "Green") {
+          x.style.backgroundColor = "green";
+        } else if (a == "Yellow") {
+          x.style.backgroundColor = "yellow";
+        } else if (a == "Black") {
+          x.style.backgroundColor = "black";
+        }
+      }
+    </script>
+  </body>
+</html>
