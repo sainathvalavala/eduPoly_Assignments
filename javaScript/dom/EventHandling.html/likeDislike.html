@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 50px;
+        height: 30px;
+        border: 2px solid;
+        text-align: center;
+        margin: 10px;
+        padding: 10px;
+        cursor: pointer;
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <div onclick="abc()" id="div1">Like</div>
+    <br />
+    <div onclick="abcd()">disLike</div>
+    <script>
+      var x = document.createElement("p");
+      x.innerHTML = "0";
+      document.body.appendChild(x);
+      var y = document.createElement("p");
+      y.innerHTML = "0";
+      document.body.appendChild(y);
+      console.log(x.innerHTML)
+      var count1=0;
+      var count2=0;
+      function abc() {
+        count1++;
+        x.innerHTML=count1
+      }
+      function abcd() {
+        count2++;
+        y.innerHTML=count2
+      }
+    </script>
+  </body>
+</html>
