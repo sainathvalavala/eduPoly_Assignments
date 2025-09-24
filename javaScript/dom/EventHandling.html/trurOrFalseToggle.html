@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    button{
+      margin-top: 10px;
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="abc()">Toggle</button>
+  <script>
+    var x = document.createElement("p");
+    x.innerHTML="false"
+    console.log(x)
+    document.body.appendChild(x)
+    function abc(){
+      if(x.innerHTML=="true"){
+        x.innerHTML="false"
+      }else{
+        x.innerHTML="true"
+      }
+    }
+  </script>
+</body>
+</html>
