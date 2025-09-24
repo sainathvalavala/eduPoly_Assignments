@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <label>Enter image URL:</label>
+  <input type="text" id="d2"><br>
+  <button onclick="abc()">Add Image</button>
+  <div style="border: 2px solid black; width: 100px; height: 100px; margin-top: 10px;" id="d1"></div>
+  <script>
+    var x= document.createElement("img");
+    var y=document.getElementById("d2");
+    console.log(y)
+    //
+    x.src=y.innerHTML;
+  </script> -->
+  <label>Enter image URL:</label>
+<input type="text" id="d2"><br>
+<button onclick="abc()">Add Image</button>
+
+<div id="d1" style="border: 2px solid black; width: 100px; height: 100px; margin-top: 10px;"></div>
+
+<script>
+  function abc() {
+    var y = document.getElementById("d2").value; // get text from input
+    var x = document.createElement("img");
+    x.src = y;
+    x.style.width = "100%";   // fit inside box
+    x.style.height = "100%";  // fit inside box
+    var container = document.getElementById("d1");
+    container.innerHTML = ""; // clear previous image
+    container.appendChild(x); // add new image
+  }
+</script>
+
+</body>
+</html>
