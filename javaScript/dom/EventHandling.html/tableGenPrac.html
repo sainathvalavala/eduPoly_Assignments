@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form name="studentForm" onsubmit="abc(event)">
+      <!-- <label for="fname">firstname:</label> -->
+      FirstName: <input type="text" name="fname" /><br />
+      <!-- <label for="lname">lastname:</label> -->
+      LastName: <input type="text" name="lname" /><br />
+      <input type="radio" name="gender" value="male" />Male
+      <input type="radio" name="gender" value="fmale" />Female
+      <input type="radio" name="gender" value="other" />Others<br />
+      <input type="checkbox" name="tech" value="Rjs" />ReactJS
+      <input type="checkbox" name="tech" value="Js" />JavaScript
+      <input type="checkbox" name="tech" value="Njs" />NodeJS
+      <input type="checkbox" name="tech" value="Tjs" />TypeScript<br />
+      <button>Get Info</button>
+      <table border="2px solid black" style="margin-top: 10px; width: 70%">
+        <thead>
+          <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Gender</th>
+            <th>Technologies</th>
+          </tr>
+        </thead>
+        <tbody id="tb"></tbody>
+      </table>
+    </form>
+    <script>
+      var users = [];
+      function abc(ev) {
+        ev.preventDefault();
+        document.getElementById("tb").innerHTML = "";
+        // var x= document.getElementsByName("fname");
+        // console.log(x[0].value)
+        // console.log(document.studentForm.fname.value);
+        // console.log(document.studentForm.lname.value);
+        // console.log(document.studentForm.gender.getall(gender));
+        var fd = new FormData(ev.target);
+        // console.log(fd);
+        var user = {
+          firstname: fd.get("fname"),
+          lastname: fd.get("lname"),
+          gender: fd.get("gender"),
+          tech: fd.getAll("tech"),
+        };
+        users.push(user);
+        console.log(users);
+        for (let i = 0; i <= users.length - 1; i++) {
+          var tbody = document.getElementById("tb");
+          var tr1 = document.createElement("tr");
+          tbody.appendChild(tr1);
+          //firstname row
+          var fnametd = document.createElement("td");
+          fnametd.innerHTML = users[i].firstname;
+          tr1.appendChild(fnametd);
+          //Lastname row
+          var Lnametd = document.createElement("td");
+          Lnametd.innerHTML = users[i].lastname;
+          tr1.appendChild(Lnametd);
+          //Gender roww
+          var gendertd = document.createElement("td");
+          gendertd.innerHTML = users[i].gender;
+          tr1.appendChild(gendertd);
+          //tech row
+          var techtd = document.createElement("td");
+          techtd.innerHTML = users[i].tech;
+          tr1.appendChild(techtd);
+        }
+        ev.target.reset();
+      }
+    </script>
+  </body>
+</html>

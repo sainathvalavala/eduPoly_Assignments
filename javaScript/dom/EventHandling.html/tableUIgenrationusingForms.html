@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form name="formdt" onsubmit="abc(event)" autocomplete="off">
+      Firstname: <input type="text" name="fname" /><br />
+      LastName: <input type="text" name="lname" /><br />
+      <input type="radio" name="status" value="married" />Married
+      <input type="radio" name="status" value="not married" />Not Married<br />
+      <input type="checkbox" name="tech" value="JavaScript" />JavaScript
+      <input type="checkbox" name="tech" value="ReactJS" />ReactJS
+      <input type="checkbox" name="tech" value="TypeScript" />TypeScript
+      <input type="checkbox" value="NextJS" />NextJS
+      <input type="checkbox" name="tech" value="NestJS" />NestJS<br />
+      <button>Get info</button>
+    </form>
+    <table border="5px solid black" width="70%">
+      <thead>
+        <tr>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Martial status</th>
+          <th>Technologies known</th>
+        </tr>
+      </thead>
+      <tbody id="tb"></tbody>
+    </table>
+    <script>
+      var students = [];
+      function abc(ev) {
+        ev.preventDefault();
+        document.getElementById("tb").innerHTML = "";
+        // console.log(ev)
+        // var x = document.getElementsByName("fname");
+        // console.log(x[0].value);
+        // console.log(document.formdt.lname.value);
+        // console.log(document.formdt.status.value);
+        // console.log(document.formdt.tech.value);
+        var fd = new FormData(ev.target);
+        console.log(fd);
+        // console.log(fd.get("fname"));
+        // console.log(fd.get("lname"));
+        // console.log(fd.get("status"));
+        // console.log(fd.getAll("tech"));
+        //
+        //creating an empty object, adding key,value pairs to it and push them into the empty array
+        //
+        student = {};
+        student.firstname = fd.get("fname");
+        student.lastname = fd.get("lname");
+        student.status = fd.get("status");
+        student.technologies = fd.getAll("tech");
+        students.push(student);
+        console.log(students);
+        ev.target.reset();
+        //
+        //
+        //displaying arrray of objects into a table
+        students.forEach(function (ab) {
+          var x = document.createElement("tr");
+          x.style.textAlign = "center";
+          var y = document.getElementById("tb");
+          y.appendChild(x);
+          //firstname row
+          var z = document.createElement("td");
+          z.innerHTML = ab.firstname;
+          x.appendChild(z);
+          //lastname row
+          var l = document.createElement("td");
+          l.innerHTML = ab.lastname;
+          x.appendChild(l);
+          //marraige row
+          var m = document.createElement("td");
+          m.innerHTML = ab.status;
+          x.appendChild(m);
+          //tech row
+          var t = document.createElement("td");
+          t.innerHTML = ab.technologies;
+          x.appendChild(t);
+        });
+      }
+    </script>
+  </body>
+</html>
