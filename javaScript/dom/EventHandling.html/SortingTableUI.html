@@ -78,45 +78,7 @@
   },
 ];
 //
-//
-people.forEach(function(x){
-  //creating row and appending it to body
-  var trow= document.createElement("tr");
-  var y= document.getElementById("tb");
-  y.appendChild(trow);
-  //firstname row
-  var fname= document.createElement("td");
-  fname.innerHTML=x.firstname;
-  trow.appendChild(fname)
-  //lastname row
-  var lname= document.createElement("td");
-  lname.innerHTML=x.lastname;
-  trow.appendChild(lname)
-  //age row
-  var agetd= document.createElement("td");
-  agetd.innerHTML=x.age;
-  trow.appendChild(agetd)
-  //gender row
-  var gendertd= document.createElement("td");
-  gendertd.innerHTML=x.gender;
-  trow.appendChild(gendertd)
-  //city row
-  var citytd= document.createElement("td");
-  citytd.innerHTML=x.city;
-  trow.appendChild(citytd)
-  //salary row
-  var salarytd= document.createElement("td");
-  salarytd.innerHTML=x.salary;
-  trow.appendChild(salarytd)
-})
-function abc(f){
-  people.sort(function(a,b){
-    if(a[f] > b[f]){
-      return 1
-    }else{
-      return -1
-    }
-  })
+function gentable(){
   var tbody = document.getElementById("tb");
   tbody.innerHTML = "";
   people.forEach(function(x){
@@ -149,6 +111,18 @@ function abc(f){
   salarytd.innerHTML=x.salary;
   trow.appendChild(salarytd)
 })
+}
+gentable()
+function abc(f){
+  people.sort(function(a,b){
+    if(a[f] > b[f]){
+      return 1
+    }else{
+      return -1
+    }
+  })
+  
+  gentable()
 }
 
   </script>
