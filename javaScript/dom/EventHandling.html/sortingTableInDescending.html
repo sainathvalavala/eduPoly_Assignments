@@ -1,156 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    th{
-      cursor: pointer;
-    }
-  </style>
-</head>
-<body>
-  <table border="3px solid green" width="80%">
-    <thead >
-      <tr>
-        <th onclick="abc('firstname')">FirstName</th>
-        <th onclick="abc('lastname')">LastName</th>
-        <th onclick="abc('age')">Age</th>
-        <th onclick="abc('gender')">Gender</th>
-        <th onclick="abc('city')">City</th>
-        <th onclick="abc('salary')">Salary</th>
-      </tr>
-    </thead>
-    <tbody id="tb">
-
-    </tbody>
-  </table>
-  <script>
-    var people = [
-  {
-    firstname: "praveen",
-    lastname: "gubbala",
-    age: 36,
-    gender: "male",
-    city: "hyd",
-    salary: 10000,
-  },
-  {
-    firstname: "srikanth",
-    lastname: "k",
-    age: 32,
-    gender: "male",
-    city: "bengaluru",
-    salary: 20000,
-  },
-  {
-    firstname: "pradeep",
-    lastname: "reddy",
-    age: 21,
-    gender: "male",
-    city: "hyd",
-    salary: 30000,
-  },
-  {
-    firstname: "mounika",
-    lastname: "mudiraj",
-    age: 20,
-    gender: "female",
-    city: "nalgonda",
-    salary: 30000,
-  },
-  {
-    firstname: "nikhil",
-    lastname: "m",
-    age: 22,
-    gender: "male",
-    city: "guntur",
-    salary: 2000,
-  },
-  {
-    firstname: "riya",
-    lastname: "bhadouria",
-    age: 14,
-    gender: "female",
-    city: "indore",
-    salary: 40000,
-  },
-];
-//
-//
-people.forEach(function(x){
-  //creating row and appending it to body
-  var trow= document.createElement("tr");
-  var y= document.getElementById("tb");
-  y.appendChild(trow);
-  //firstname row
-  var fname= document.createElement("td");
-  fname.innerHTML=x.firstname;
-  trow.appendChild(fname)
-  //lastname row
-  var lname= document.createElement("td");
-  lname.innerHTML=x.lastname;
-  trow.appendChild(lname)
-  //age row
-  var agetd= document.createElement("td");
-  agetd.innerHTML=x.age;
-  trow.appendChild(agetd)
-  //gender row
-  var gendertd= document.createElement("td");
-  gendertd.innerHTML=x.gender;
-  trow.appendChild(gendertd)
-  //city row
-  var citytd= document.createElement("td");
-  citytd.innerHTML=x.city;
-  trow.appendChild(citytd)
-  //salary row
-  var salarytd= document.createElement("td");
-  salarytd.innerHTML=x.salary;
-  trow.appendChild(salarytd)
-})
-function abc(f){
-  people.sort(function(a,b){
-    if(a[f] < b[f]){
-      return 1
-    }else{
-      return -1
-    }
-  })
-  var tbody = document.getElementById("tb");
-  tbody.innerHTML = "";
-  people.forEach(function(x){
-  //creating row and appending it to body
-  var trow= document.createElement("tr");
-  var y= document.getElementById("tb");
-  y.appendChild(trow);
-  //firstname row
-  var fname= document.createElement("td");
-  fname.innerHTML=x.firstname;
-  trow.appendChild(fname)
-  //lastname row
-  var lname= document.createElement("td");
-  lname.innerHTML=x.lastname;
-  trow.appendChild(lname)
-  //age row
-  var agetd= document.createElement("td");
-  agetd.innerHTML=x.age;
-  trow.appendChild(agetd)
-  //gender row
-  var gendertd= document.createElement("td");
-  gendertd.innerHTML=x.gender;
-  trow.appendChild(gendertd)
-  //city row
-  var citytd= document.createElement("td");
-  citytd.innerHTML=x.city;
-  trow.appendChild(citytd)
-  //salary row
-  var salarytd= document.createElement("td");
-  salarytd.innerHTML=x.salary;
-  trow.appendChild(salarytd)
-})
-}
-
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      th {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <table border="3px solid green" width="80%">
+      <thead>
+        <tr>
+          <th onclick="abc('firstname')">FirstName</th>
+          <th onclick="abc('lastname')">LastName</th>
+          <th onclick="abc('age')">Age</th>
+          <th onclick="abc('gender')">Gender</th>
+          <th onclick="abc('city')">City</th>
+          <th onclick="abc('salary')">Salary</th>
+        </tr>
+      </thead>
+      <tbody id="tb"></tbody>
+    </table>
+    <script>
+      var people = [
+        {
+          firstname: "praveen",
+          lastname: "gubbala",
+          age: 36,
+          gender: "male",
+          city: "hyd",
+          salary: 10000,
+        },
+        {
+          firstname: "srikanth",
+          lastname: "k",
+          age: 32,
+          gender: "male",
+          city: "bengaluru",
+          salary: 20000,
+        },
+        {
+          firstname: "pradeep",
+          lastname: "reddy",
+          age: 21,
+          gender: "male",
+          city: "hyd",
+          salary: 30000,
+        },
+        {
+          firstname: "mounika",
+          lastname: "mudiraj",
+          age: 20,
+          gender: "female",
+          city: "nalgonda",
+          salary: 30000,
+        },
+        {
+          firstname: "nikhil",
+          lastname: "m",
+          age: 22,
+          gender: "male",
+          city: "guntur",
+          salary: 2000,
+        },
+        {
+          firstname: "riya",
+          lastname: "bhadouria",
+          age: 14,
+          gender: "female",
+          city: "indore",
+          salary: 40000,
+        },
+      ];
+      //
+      //
+      function tablegen() {
+        var tbody = document.getElementById("tb");
+        tbody.innerHTML = "";
+        people.forEach(function (x) {
+          //creating row and appending it to body
+          var trow = document.createElement("tr");
+          var y = document.getElementById("tb");
+          y.appendChild(trow);
+          //firstname row
+          var fname = document.createElement("td");
+          fname.innerHTML = x.firstname;
+          trow.appendChild(fname);
+          //lastname row
+          var lname = document.createElement("td");
+          lname.innerHTML = x.lastname;
+          trow.appendChild(lname);
+          //age row
+          var agetd = document.createElement("td");
+          agetd.innerHTML = x.age;
+          trow.appendChild(agetd);
+          //gender row
+          var gendertd = document.createElement("td");
+          gendertd.innerHTML = x.gender;
+          trow.appendChild(gendertd);
+          //city row
+          var citytd = document.createElement("td");
+          citytd.innerHTML = x.city;
+          trow.appendChild(citytd);
+          //salary row
+          var salarytd = document.createElement("td");
+          salarytd.innerHTML = x.salary;
+          trow.appendChild(salarytd);
+        });
+      }
+      tablegen()
+      var d=1
+      function abc(f) {
+        console.log(d)
+        people.sort(function (a, b) {
+          if (a[f] > b[f]) {
+            return d;//d=1. asc
+          } else {
+            return -d;//d= -1 . desc
+          }
+        });
+        d=-d
+        console.log(d)
+        tablegen()
+      }
+    </script>
+  </body>
 </html>

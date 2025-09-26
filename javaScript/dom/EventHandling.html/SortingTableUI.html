@@ -114,6 +114,7 @@ function gentable(){
 }
 gentable()
 var d={}
+// var d=1
 function abc(f){
   if(typeof d[f]=="undefined"){
     d[f] = 1
@@ -126,6 +127,7 @@ function abc(f){
     }
   })
   d[f]=-d[f]
+  // d=-d
   
   gentable()
 }
