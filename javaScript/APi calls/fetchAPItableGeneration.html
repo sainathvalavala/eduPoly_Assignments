@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table border="2px solid black" width="70%">
+      <thead>
+        <style>
+          td {
+            text-align: center;
+          }
+        </style>
+        <tr>
+          <th onclick="abc('name')">name</th>
+          <th onclick="abc('cookTimeMinutes')">cookTimeMinutes</th>
+          <th onclick="abc('cuisine')">cuisine type</th>
+          <th onclick="abc('image')">images</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <script>
+      // fetching data from api
+      fetch("https://dummyjson.com/recipes")
+        .then(function (res) {
+          return res.json();
+        })
+        .then(function (data) {
+          recipes = data.recipes;
+          tablegen();
+        });
+      // console.log(recipes);
+      //generating table
+      function tablegen() {
+        const tbody = document.getElementById("tbody");
+        tbody.innerHTML = ""; // clearing table beforre adding new rows
+
+        recipes.forEach(function (x) {
+          const trow = document.createElement("tr");
+          tbody.appendChild(trow);
+          // console.log(x.image);
+
+          const nametd = document.createElement("td");
+          nametd.innerHTML = x.name;
+          trow.appendChild(nametd);
+
+          const cooktimetd = document.createElement("td");
+          cooktimetd.innerHTML = x.cookTimeMinutes;
+          trow.appendChild(cooktimetd);
+          //creating cuisine type
+          const cuisinetd = document.createElement("td");
+          cuisinetd.innerHTML = x.cuisine;
+          trow.appendChild(cuisinetd);
+          //creating image type
+          const imagetd = document.createElement("td");
+          const img = document.createElement("img");
+          img.src = x.image;
+          img.style.width = "80px";
+          imagetd.appendChild(img);
+          trow.appendChild(imagetd);
+        });
+      }
+
+      var d = {};
+      function abc(f) {
+        console.log(d[f]);// d["name"]= is not defined anywhere so undefined
+        if (typeof d[f] == "undefined") {
+          d[f] = 1;
+          console.log(d[f]);//important check
+        }
+        recipes.sort(function (a, b) {
+          if (a[f] > b[f]) {//asc
+            return d[f];
+          } else {
+            return -d[f];
+          }
+        });
+        d[f] = -d[f]; // chaneging sort order for next click
+        console.log(d[f]);//important check
+        tablegen(); // re-render table
+      }
+    </script>
+  </body>
+</html>
