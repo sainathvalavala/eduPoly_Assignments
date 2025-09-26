@@ -14,10 +14,10 @@
           }
         </style>
         <tr>
-          <th onclick="abc('name')">name</th>
-          <th onclick="abc('cookTimeMinutes')">cookTimeMinutes</th>
-          <th onclick="abc('cuisine')">cuisine type</th>
-          <th onclick="abc('image')">images</th>
+          <th onclick="abc(event,'name')" id="d3">name</th>
+          <th onclick="abc(event,'cookTimeMinutes')">cookTimeMinutes</th>
+          <th onclick="abc(event,'cuisine')">cuisine type</th>
+          <th onclick="abc(event,'image')">images</th>
         </tr>
       </thead>
       <tbody id="tbody"></tbody>
@@ -30,14 +30,16 @@
         })
         .then(function (data) {
           recipes = data.recipes;
+          console.log(recipes);
           tablegen();
         });
       // console.log(recipes);
+
+
       //generating table
       function tablegen() {
         const tbody = document.getElementById("tbody");
-        tbody.innerHTML = ""; // clearing table beforre adding new rows
-
+        tbody.innerHTML = ""; // clearing table beforre addding new rows
         recipes.forEach(function (x) {
           const trow = document.createElement("tr");
           tbody.appendChild(trow);
@@ -65,21 +67,31 @@
       }
 
       var d = {};
-      function abc(f) {
-        console.log(d[f]);// d["name"]= is not defined anywhere so undefined
+      function abc(ev, f) {
+        console.log(f)//check important
+        console.log(d[f]); // d["name"]= is not defined anywhere so undefined
         if (typeof d[f] == "undefined") {
           d[f] = 1;
-          console.log(d[f]);//important check
+          console.log(d[f]); //important check
         }
         recipes.sort(function (a, b) {
-          if (a[f] > b[f]) {//asc
+          if (a[f] > b[f]) {
+            //asc
             return d[f];
           } else {
             return -d[f];
           }
         });
-        d[f] = -d[f]; // chaneging sort order for next click
-        console.log(d[f]);//important check
+        if (d[f] == 1) {
+          ev.target.innerHTML=""
+          ev.target.innerHTML += `${f}  &#8595(AscOrder)`;
+        } else {
+          ev.target.innerHTML=""
+          ev.target.innerHTML += `${f} &#8593(DescOrder)`;
+        }
+        d[f] = -d[f];
+        // chaneging sort order for next click
+        console.log(d[f]); //important check
         tablegen(); // re-render table
       }
     </script>
