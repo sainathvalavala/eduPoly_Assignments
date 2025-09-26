@@ -29,7 +29,7 @@
   <script>
     var people = [
   {
-    firstname: "praveen",
+    firstname: "kishore",
     lastname: "gubbala",
     age: 36,
     gender: "male",
@@ -45,7 +45,7 @@
     salary: 20000,
   },
   {
-    firstname: "pradeep",
+    firstname: "arjun",
     lastname: "reddy",
     age: 21,
     gender: "male",
@@ -69,7 +69,7 @@
     salary: 2000,
   },
   {
-    firstname: "riya",
+    firstname: "zoya",
     lastname: "bhadouria",
     age: 14,
     gender: "female",
@@ -113,14 +113,19 @@ function gentable(){
 })
 }
 gentable()
+var d={}
 function abc(f){
+  if(typeof d[f]=="undefined"){
+    d[f] = 1
+  }
   people.sort(function(a,b){
-    if(a[f] > b[f]){
-      return 1
+    if(a[f] > b[f]){//ascending 
+      return d[f]
     }else{
-      return -1
+      return -d[f]
     }
   })
+  d[f]=-d[f]
   
   gentable()
 }
