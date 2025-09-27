@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table border="3px solid black" width="70%">
+      <thead>
+        <tr>
+          <th onclick="xyz(event,'id')">UserID</th>
+          <th onclick="full(event,'fullName')">FullName</th>
+          <th onclick="uname(event,'username')">UserName</th>
+          <th onclick="boddy(event,'body')">Comment Body</th>
+          <th onclick="like(event,'likes')">Likes</th>
+          <th onclick="post(event,'postId')">postID</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <script>
+      users = [];
+      fetch("https://dummyjson.com/comments")
+        .then(function (res) {
+          // console.log(res)
+          return res.json();
+        })
+        .then(function (data) {
+          console.log(data);
+          comments = data.comments;
+          console.log(comments);
+          // console.log(users);
+          tablegen();
+        });
+      //table generation code
+      function tablegen() {
+        var tbody = document.getElementById("tbody");
+        tbody.innerHTML = "";
+        comments.forEach(function (c) {
+          console.log(c);
+          var trow = document.createElement("tr");
+          tbody.appendChild(trow);
+          //userID row
+          var usertd = document.createElement("td");
+          usertd.innerHTML = c.user.id;
+          trow.appendChild(usertd);
+          //user FullName
+          var fullNametd = document.createElement("td");
+          fullNametd.innerHTML = c.user.fullName;
+          trow.appendChild(fullNametd);
+          //user Username
+          var userNametd = document.createElement("td");
+          userNametd.innerHTML = c.user.username;
+          trow.appendChild(userNametd);
+          //comment body
+          var commenttd = document.createElement("td");
+          commenttd.innerHTML = c.body;
+          trow.appendChild(commenttd);
+          //likes
+          var liketd = document.createElement("td");
+          liketd.innerHTML = c.likes;
+          trow.appendChild(liketd);
+          //postID
+          var postIdtd = document.createElement("td");
+          postIdtd.innerHTML = c.postId;
+          trow.appendChild(postIdtd);
+        });
+      }
+      //sorting userID
+      var u = 1;
+      function xyz(ev, f) {
+        comments.sort(function (a, b) {
+          if (a.user[f] > b.user[f]) {
+            return u;
+          } else {
+            return -u;
+          }
+        });
+        if (u == 1) {
+          ev.target.innerHTML = `UserId &#8595`;
+        } else {
+          ev.target.innerHTML = `UserId &#8593`;
+        }
+        u = -u;
+        tablegen();
+      }
+      //sorting Fullname
+      var d = 1;
+      function full(ev, f) {
+        comments.sort(function (a, b) {
+          if (a.user[f] > b.user[f]) {
+            return d;
+          } else {
+            return -d;
+          }
+        });
+        if (d == 1) {
+          ev.target.innerHTML = `FullName &#8595`;
+        } else {
+          ev.target.innerHTML = `FullName &#8593`;
+        }
+        d = -d;
+        tablegen();
+      }
+      //sorting username
+      var un = 1;
+      function uname(ev, f) {
+        comments.sort(function (a, b) {
+          if (a.user[f] > b.user[f]) {
+            return un;
+          } else {
+            return -un;
+          }
+        });
+        if (un == 1) {
+          ev.target.innerHTML = `UserName &#8595`;
+        } else {
+          ev.target.innerHTML = `UserName &#8593`;
+        }
+        un = -un;
+        tablegen();
+      }
+      //sorting comment
+      var cb = 1;
+      function boddy(ev, f) {
+        comments.sort(function (a, b) {
+          if (a[f] > b[f]) {
+            return cb;
+          } else {
+            return -cb;
+          }
+        });
+        if (cb == 1) {
+          ev.target.innerHTML = `Comment Body &#8595`;
+        } else {
+          ev.target.innerHTML = `Comment Body &#8593`;
+        }
+        cb = -cb;
+        tablegen();
+      }
+      //sorting likep
+      var l = 1;
+      function like(ev, f) {
+        comments.sort(function (a, b) {
+          if (a[f] > b[f]) {
+            return l;
+          } else {
+            return -l;
+          }
+        });
+        if (l == 1) {
+          ev.target.innerHTML = `Likes &#8595`;
+        } else {
+          ev.target.innerHTML = `Likes &#8593`;
+        }
+        l = -l;
+        tablegen();
+      }
+      //sorting postId
+      var p = 1;
+      function post(ev, f) {
+        comments.sort(function (a, b) {
+          if (a[f] > b[f]) {
+            return p;
+          } else {
+            return -p;
+          }
+        });
+        if (p == 1) {
+          ev.target.innerHTML = `postId &#8595`;
+        } else {
+          ev.target.innerHTML = `postId &#8593`;
+        }
+        p = -p;
+        tablegen();
+      }
+    </script>
+  </body>
+</html>
