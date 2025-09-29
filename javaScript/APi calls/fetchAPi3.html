@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      th,
+      td {
+        width: 80px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <table border="2px solid black" width="50%">
+        <thead>
+          <tr>
+            <th onclick="abc(event,'title')">Title</th>
+            <th onclick="abc(event,'price')">Price</th>
+            <th onclick="abc(event,'image')">Image</th>
+            <th onclick="(event,'rating')">Rating</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <script>
+      var products = [];
+      fetch("https://fakestoreapi.com/products")
+        .then(function (res) {
+          return (res = res.json());
+        })
+        .then(function (data) {
+          console.log(data);
+          data.forEach(function (x) {
+            // console.log(x)
+            products.push(x);
+          });
+          tableGen();
+        });
+      function tableGen() {
+        products.forEach(function (a) {
+          var tb = document.getElementById("tbody");
+          var tr = document.createElement("tr");
+          tb.appendChild(tr);
+          //title
+          var titletd = document.createElement("td");
+          titletd.innerHTML = a.title;
+          tr.appendChild(titletd);
+          //price
+          var pricetd = document.createElement("td");
+          pricetd.innerHTML = a.price;
+          tr.appendChild(pricetd);
+          //image
+          var imagetd = document.createElement("td");
+          // imagetd.innerHTML=a.image
+          var img = document.createElement("img");
+          img.src = a.image;
+          img.width = 60;
+          imagetd.appendChild(img);
+          tr.appendChild(imagetd);
+          //rating
+          var ratingtd = document.createElement("td");
+          ratingtd.innerHTML = a.rating.rate + " ⭐";
+          tr.appendChild(ratingtd);
+        });
+      }
+      var d = {};
+      function abc(ev, f) {
+        if (typeof d[f] == "undefined") {
+          d[f] = 1;
+        }
+        console.log(d[f]);
+        products.sort(function (a, b) {
+          let valA = f === "rating" ? a.rating.rate : a[f];
+          let valB = f === "rating" ? b.rating.rate : b[f];
+          if (valA > valB) {
+            return d[f];
+          } else {
+            return -d[f];
+          }
+        });
+        if (d[f] == 1) {
+          ev.target.innerHTML = "";
+          ev.target.innerHTML += `${f}&#8595`;
+        } else {
+          ev.target.innerHTML = "";
+          ev.target.innerHTML += `${f}&#8593`;
+        }
+        d[f] = -d[f];
+        document.getElementById("tbody").innerHTML = "";
+        tableGen();
+      }
+    </script>
+  </body>
+</html>
