@@ -25,7 +25,7 @@
             <th onclick="abc(event,'title')">Title</th>
             <th onclick="abc(event,'price')">Price</th>
             <th onclick="abc(event,'image')">Image</th>
-            <th onclick="(event,'rating')">Rating</th>
+            <th onclick="abc(event,'rate')">Rating</th>
           </tr>
         </thead>
         <tbody id="tbody"></tbody>
@@ -79,8 +79,8 @@
         }
         console.log(d[f]);
         products.sort(function (a, b) {
-          let valA = f === "rating" ? a.rating.rate : a[f];
-          let valB = f === "rating" ? b.rating.rate : b[f];
+          let valA = f === "rate" ? a.rating.rate : a[f];
+          let valB = f === "rate" ? b.rating.rate : b[f];
           if (valA > valB) {
             return d[f];
           } else {
