@@ -9,15 +9,13 @@
     <table border="2px solid black">
       <thead>
         <tr>
-          <th>Product ID</th>
-          <th>Name</th>
-          <th>Price</th>
-          <th> Image</th>
+          <th onclick="abc(event,'id')">Product ID</th>
+          <th onclick="abc(event,'title')">Name</th>
+          <th onclick="abc('event','price')"">Price</th>
+          <th>Image</th>
         </tr>
       </thead>
-      <tbody id="tbody">
-
-      </tbody>
+      <tbody id="tbody"></tbody>
     </table>
     <script>
       var allProducts = [];
@@ -32,11 +30,12 @@
             allProducts = allProducts.concat(a.products);
             // console.log(allProducts);
           });
-          tableGen(allProducts)
+          tableGen(allProducts);
         });
       console.log(allProducts);
       function tableGen(products) {
         let tb = document.getElementById("tbody");
+        tb.innerHTML = "";
         products.forEach((a) => {
           let tr = document.createElement("tr");
 
@@ -64,7 +63,20 @@
           tr.appendChild(thumbtd);
 
           tb.appendChild(tr);
-        })}
+        });
+      }
+      var d = 1;
+      function abc(ev, f) {
+        allProducts.sort(function (a, b) {
+          if (a[f] > b[f]) {
+            return d;
+          } else {
+            return -d;
+          }
+        });
+        d = -d;
+        tableGen(allProducts)
+      }
     </script>
   </body>
 </html>
