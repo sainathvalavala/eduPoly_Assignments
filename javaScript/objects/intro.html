@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var details = {
+        firstname: "SaiNath",
+        lastname: "Valavala",
+        age: 22,
+        city: "Hyderabad",
+        state: "Telangana",
+        country: "India",
+        pincode: 500084,
+        hobbies: ["coding", "cricket", "chess", "music"],
+        education: {
+          ssc: { school: "ABC High School", year: 2018, percentage: 89.6 },
+          intermediate: {
+            college: "XYZ Junior College",
+            year: 2020,
+            percentage: 91.2,
+          },
+          graduation: {
+            university: "Osmania University",
+            year: 2023,
+            percentage: 85.4,
+          },
+        },
+      };
+      var j= "year"
+      console.log(details.firstname);
+      console.log(details['lastname']);
+      console.log(details.hobbies);
+      console.log(details.education.graduation.university);
+      console.log(details.education.intermediate.year);
+      console.log(details.education.ssc[j]);
+      console.log(details)
+      //looping through object
+      for(let key in details){
+        console.log("shelby",key,details[key])
+        
+        
+      }
+    </script>
+  </body>
+</html>
