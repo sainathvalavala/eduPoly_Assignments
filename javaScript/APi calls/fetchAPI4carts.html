@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table border="2px solid black">
+      <thead>
+        <tr>
+          <th>Product ID</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th> Image</th>
+        </tr>
+      </thead>
+      <tbody id="tbody">
+
+      </tbody>
+    </table>
+    <script>
+      var allProducts = [];
+      fetch("https://dummyjson.com/carts")
+        .then(function (x) {
+          return x.json();
+        })
+        .then(function (y) {
+          // console.log(y);
+          y.carts.forEach(function (a) {
+            // console.log(a);
+            allProducts = allProducts.concat(a.products);
+            // console.log(allProducts);
+          });
+          tableGen(allProducts)
+        });
+      console.log(allProducts);
+      function tableGen(products) {
+        let tb = document.getElementById("tbody");
+        products.forEach((a) => {
+          let tr = document.createElement("tr");
+
+          // product id
+          let idtd = document.createElement("td");
+          idtd.innerHTML = a.id;
+          tr.appendChild(idtd);
+
+          // title
+          let titletd = document.createElement("td");
+          titletd.innerHTML = a.title;
+          tr.appendChild(titletd);
+
+          // price
+          let pricetd = document.createElement("td");
+          pricetd.innerHTML = "$" + a.price;
+          tr.appendChild(pricetd);
+
+          // thumbnail
+          let thumbtd = document.createElement("td");
+          let img = document.createElement("img");
+          img.src = a.thumbnail;
+          img.width = 60;
+          thumbtd.appendChild(img);
+          tr.appendChild(thumbtd);
+
+          tb.appendChild(tr);
+        })}
+    </script>
+  </body>
+</html>
