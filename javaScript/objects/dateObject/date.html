@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date Object</title>
+  </head>
+  <body id="bdy">
+    <!-- <input type="calender"> -->
+    <script>
+      function displayDateAndTime() {
+        document.getElementById("bdy").innerHTML = "";
+        var today = new Date();
+        var date =
+          today.getDate() +
+          "/" +
+          (today.getMonth() + 1) +
+          "/" +
+          today.getFullYear() +
+          " " +
+          today.getHours() +
+          ":" +
+          today.getMinutes() +
+          ":" +
+          today.getSeconds();
+        var h1 = document.createElement("h1");
+        h1.innerHTML = date;
+        document.getElementById("bdy").appendChild(h1);
+      }
+      // displayDateAndTime()
+      setInterval(displayDateAndTime,1000)
+      // console.log(today)
+      // var toda=new Date("07-31-2001");
+      // console.log(toda)
+      // console.dir(today.getDate())
+      // console.dir(today.getMonth())
+      // console.dir(today.getHours())
+      // console.dir(today.getMinutes())
+      // console.dir(today.getSeconds())
+      // console.dir(today.getMilliseconds())
+    </script>
+  </body>
+</html>
