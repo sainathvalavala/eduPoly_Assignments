@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+  counter:<span id="sp"></span></div>
+  <button onclick="inc()">Inc</button>
+  <button onclick="dec()">Dec</button>
+  <script>
+    // if(window.sessionStorage.getItem
+    // ("counter")){
+      //   counter=window.sessionStorage.getItem("counter")
+      // }else{
+        //   counter=0;
+        // }
+        // document.getElementById("sp").innerText=counter
+        // function inc(){
+          //   counter++;
+          //   document.getElementById("sp").innerText=counter
+          //   window.sessionStorage.setItem("counter",counter)
+          // }
+          // function dec(){
+            //   counter--;
+            //   document.getElementById("sp").innerText=counter
+            //   window.sessionStorage.setItem("counter",counter)
+            // }
+            //local storage
+            var counter;
+            if(window.localStorage.getItem("counter")){
+              counter=window.localStorage.getItem("counter")
+            }else{
+              counter=0
+            }
+            document.getElementById("sp").innerHTML=counter
+            function inc(){
+              counter++;
+              window.localStorage.setItem("counter",counter)
+              document.getElementById("sp").innerText=counter
+            }
+            function dec(){
+              counter--;
+              document.getElementById("sp").innerText=counter
+              window.localStorage.setItem("counter",counter)
+            }
+  </script>
+</body>
+</html>
