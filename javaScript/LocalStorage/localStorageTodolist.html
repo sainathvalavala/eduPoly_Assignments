@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>localStorage TodoList</title>
+  </head>
+  <body>
+    <input type="text" id="txt" autocomplete="off" />
+    <button onclick="addTodo()">Add Todo</button>
+    <ul id="todoList"></ul>
+    <script>
+
+      var todos;
+      if (window.localStorage.getItem("todos")) {
+        todos=JSON.parse(window.localStorage.getItem("todos"));
+      }else{
+        todos=[]
+      }
+
+
+      function gentodo(){
+        document.getElementById("todoList").innerHTML=""
+        todos.forEach(function(x){
+          var nli= document.createElement("li")
+          nli.innerHTML=x;
+          document.getElementById("todoList").appendChild(nli)
+        })
+      }
+
+
+      function addTodo(){
+        todos.push(document.getElementById("txt").value)
+        window.localStorage.setItem("todos",JSON.stringify(todos));
+        document.getElementById("txt").value=""
+        gentodo()
+      }
+      gentodo()
+    </script>
+  </body>
+</html>
