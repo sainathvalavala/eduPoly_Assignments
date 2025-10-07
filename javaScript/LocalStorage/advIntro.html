@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let arr=[1,2,3,4]
+    console.log(arr)
+    //json.stringify will convert array/obj into a string
+    console.log(JSON.stringify(arr))//stringified array
+    console.log(typeof (JSON.stringify(arr)))//string
+    window.sessionStorage.setItem("array",JSON.stringify(arr))
+    console.log( sessionStorage.getItem("array"))
+    //json.parse will convert stringlike array  into normal array/obj with respect to it.
+    console.log( JSON.parse(sessionStorage.getItem("array")))
+    console.log( typeof( JSON.parse(sessionStorage.getItem("array"))))//array(object)
+  </script>
+</body>
+</html>
