@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>Counter:<span id="counter"> 0</span></div>
+  <button onclick="inc()">Increment</button>
+  <button onclick="dec()">Decrement</button>
+  <script>
+    var c=0;
+    function inc(){
+      c++;
+      document.getElementById("counter").innerText=c
+    }
+    function dec(){
+      c--;
+      document.getElementById("counter").innerText=c
+    }
+  </script>
+</body>
+</html>

@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <h4>Enter Your BirthDate</h4>
-  <input onchange="abc(event)"  type="date">
-  <h3 id="result"></h3>
-  <script>
-    function abc(ev){
-      var birthDate= new Date(ev.target.value)
-      
-      var today= new Date()
-      // Calculate age components
-      let years = today.getFullYear() - birthDate.getFullYear();
-      let months = today.getMonth() - birthDate.getMonth();
-      let days = today.getDate() - birthDate.getDate();
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h4>Enter Your BirthDate</h4>
+    <input onchange="abc(event)" type="date" />
+    <h3 id="result"></h3>
+    <script>
+      function abc(ev) {
+        var birthDate = new Date(ev.target.value);
 
-    const result = `You are ${years} years, ${months} months, and ${days} days old.`;
-      document.getElementById("result").textContent = result;
-      console.log(result);
-    }
-  </script>
-</body>
+        var today = new Date();
+
+        let years = today.getFullYear() - birthDate.getFullYear();
+        let months = today.getMonth() - birthDate.getMonth();
+        let days = today.getDate() - birthDate.getDate();
+        if (months < 0) {
+          years=years--;
+          months += 12;
+        }
+        const result = `You are ${years} years, ${months} months, and ${days} days old.`;
+        document.getElementById("result").textContent = result;
+        console.log(result);
+      }
+    </script>
+  </body>
 </html>
