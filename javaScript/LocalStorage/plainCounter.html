@@ -6,11 +6,12 @@
   <title>Document</title>
 </head>
 <body>
-  <div>Counter:<span id="counter"> 0</span></div>
+  <div>Counter:<span id="counter"></span></div>
   <button onclick="inc()">Increment</button>
   <button onclick="dec()">Decrement</button>
   <script>
     var c=0;
+    document.getElementById("counter").innerHTML=c
     function inc(){
       c++;
       document.getElementById("counter").innerText=c
