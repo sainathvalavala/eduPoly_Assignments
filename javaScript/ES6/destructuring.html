@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var ar=["sai","nath","rahul","revanth","ashok"]
+    var a= ar[0];
+    var b= ar[1];
+    console.log(a,b)
+    var [x,y,,d]=ar// array destructuring 
+    console.log(x,y,d)
+
+    //object destructuring
+    var br={
+      "firstname":"Bala",
+      "middlename":"sai",
+      "lastname":"nath",
+      "age":"24",
+      "height":"169"
+    }
+    var{firstname,middlename}=br;
+    console.log(firstname,middlename)
+
+    //variable destructing
+    var a=10;
+    var b=20;
+    // console.log(a);
+    // console.log(b)
+    [a,b]= [b,a];
+    console.log(a);
+    console.log(b)
+
+    //function destructing by passing object as parameter 
+    // function abc(x){
+    //   console.log(x.firstname)
+    //   console.log(x.lastname)
+    // }
+    function abc({firstname,lastname}){
+      console.log(firstname)
+      console.log(lastname)
+    }
+    abc(br)
+  </script>
+</body>
+</html>
